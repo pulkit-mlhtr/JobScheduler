@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Job.Manager.Business.Model\Job.Manager.Business.Model.csproj" />
+    <ProjectReference Include="..\Job.Manager.DataAccess\Job.Manager.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

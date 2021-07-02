@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<ConnectionStrings>
+		<JobContext>
+			Filename=JobsRepo.db
+		</JobContext>
+	</ConnectionStrings>
+	<Serilog>
+		<Enrich>
+			<element>FromLogContext</element>
+		</Enrich>
+		<MinimumLevel>
+			<Default>Information</Default>
+			<Override>
+				<Microsoft>Information</Microsoft>
+				<System>Error</System>
+			</Override>
+		</MinimumLevel>
+		<Properties>
+			<Application>JOb.Manager.Api</Application>
+		</Properties>
+		<Using>
+			<element>Serilog.Sinks.MSSqlServer</element>
+		</Using>
+		<WriteTo>
+			<element>
+				<Args>
+					<ConnectionString>Filename=JobsRepo.db</ConnectionString>
+					<restrictedToMinimumLevel>Information</restrictedToMinimumLevel>
+					<sinkOptionsSection>
+						<autoCreateSqlTable>true</autoCreateSqlTable>
+						<schemaName>dbo</schemaName>
+						<tableName>Log</tableName>
+					</sinkOptionsSection>					
+				</Args>
+				<Name>MSSqlServer</Name>
+			</element>
+		</WriteTo>
+	</Serilog>
+</configuration>
+	
